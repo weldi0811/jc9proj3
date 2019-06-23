@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "lorem",
+      "email": "lorem@ipsum.com",
+      "password": "1sampai8",
+      "id": 1
+    },
+    {
+      "username": "yuhu",
+      "email": "asu",
+      "password": "asu",
+      "id": 2
+    }
+  ]
+}
