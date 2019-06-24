@@ -1,9 +1,11 @@
 import React, { Component} from 'react'
 import axios from 'axios'
-
-
+import {Link} from 'react-router-dom'
 
 class Register extends Component {
+
+    //POST
+        // axios menerima parameternya LINK dan OBJECT
 
     onButtonClick = () => {
         const inputUser = this.username.value
@@ -13,6 +15,7 @@ class Register extends Component {
         //biar ga bisa kosong isinya
         if(inputUser ==='' || inputPass==='' || inputEmail===''){
             alert('tolong diisi')
+            window.location.reload()
         }
         else{
         //baru mulai pake axios
@@ -25,6 +28,7 @@ class Register extends Component {
             console.log(res)
             if(res.data.length >0){
                 alert('username existed')
+                window.location.reload()
             }
             else if(res.data.length === 0){
                 axios.get('http://localhost:4000/users',{
@@ -34,6 +38,7 @@ class Register extends Component {
             }).then((res2) => {
                 if(res2.data.length>0){
                     alert('email existed')
+                    window.location.reload()
                 }
                 else{
                     axios.post('http://localhost:4000/users',
@@ -53,26 +58,6 @@ class Register extends Component {
             }
         })
         }
-
-        //GET
-        
-        // for(var i=0; i<this.pengguna.length; i++){
-        //     var name = this.pengguna[i]
-        //     if(name.includes(user)){
-        //         alert('error')
-        //     }
-        // }
-        
-
-            
-        
-        
-
-        //POST
-        // axios menerima parameternya LINK dan OBJECT
-        
-      
-
     }
 
     render(){
@@ -109,6 +94,7 @@ class Register extends Component {
                                 />
                             </form>
                             <button onClick={this.onButtonClick} className='btn btn-primary mt-3'>Register</button>
+                            <p>sudah punya akun? <Link to='/login'>Sign in disini</Link></p>
                         </div>
                         
                     </div>

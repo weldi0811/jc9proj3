@@ -11,6 +11,12 @@
       "email": "asu",
       "password": "asu",
       "id": 2
+    },
+    {
+      "username": "asd",
+      "email": "weg",
+      "password": "asdg",
+      "id": 3
     }
   ]
 }
