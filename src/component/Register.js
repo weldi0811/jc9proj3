@@ -17,6 +17,15 @@ class Register extends Component {
             alert('tolong diisi')
             window.location.reload()
         }
+        else if (inputEmail.includes(' ') === true){
+            alert('email can not contain space')
+        }
+        else if(inputPass.length < 8){
+            alert('password must be 8 character or more')
+        }
+        else if(inputPass.includes(' ') === true){
+            alert('password can not contain space')
+        }
         else{
         //baru mulai pake axios
         axios.get('http://localhost:4000/users',{

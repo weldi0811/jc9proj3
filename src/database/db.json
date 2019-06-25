@@ -17,6 +17,12 @@
       "email": "weg",
       "password": "asdg",
       "id": 3
+    },
+    {
+      "username": "tes1",
+      "email": "tes1",
+      "password": "12345678",
+      "id": 4
     }
   ]
 }
