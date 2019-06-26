@@ -28,3 +28,8 @@ export const onLoginUser = (inputEmail,inputpassword) =>{
    }
 
 }
+export const onLogoutUser = () => {
+    return {
+        type: 'LOGOUT_SUCCESS'
+    }
+}

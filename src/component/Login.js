@@ -17,12 +17,6 @@ class Login extends React.Component{
         if (inputEmail === ''){
             alert('must fill email')
         }
-        else if(inputpassword.length < 8){
-            alert('password must be 8 character or more')
-        }
-        else if(inputpassword.includes(' ') == true){
-            alert('password can not contain space')
-        }
         else{
             // check credentials
             this.props.onLoginUser(inputEmail,inputpassword)
@@ -66,4 +60,10 @@ class Login extends React.Component{
     }
 }
 
-export default connect(null, {onLoginUser})(Login)
+const mapStateToProps = state => {
+    return {
+        user : state.auth
+    }
+}
+
+export default connect(mapStateToProps, {onLoginUser})(Login)
