@@ -24,5 +24,28 @@
       "password": "12345678",
       "id": 4
     }
+  ],
+  "products": [
+    {
+      "name": "asdfsadf",
+      "desc": "asdfasdfsa",
+      "price": 100000,
+      "src": "https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/042018/untitled-1_66.png?V3gXOsWOaKg2Jt9wpb8QARS_5FSDpa8R&itok=uGFnB1xI",
+      "id": 1
+    },
+    {
+      "name": "asdfsadf2",
+      "desc": "asdfasdfsa2",
+      "price": 100000,
+      "src": "https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/092015/corsair_new_2.png?itok=Ovp7Wi8i",
+      "id": 2
+    },
+    {
+      "name": "razer",
+      "desc": "razer",
+      "price": 10000000,
+      "src": "https://res.cloudinary.com/teepublic/image/private/s--3RFUOaz6--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1510662005/production/designs/2055435_1.jpg",
+      "id": 3
+    }
   ]
 }

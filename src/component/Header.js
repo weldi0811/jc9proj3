@@ -75,7 +75,7 @@ class Header extends React.Component{
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link to = '/manageproducts'>
+                <Link to = '/manageproduct'>
                 <Button color ='primary' className='mx-3'>Products</Button>
                 </Link>
               </NavItem>
