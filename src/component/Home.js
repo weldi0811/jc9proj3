@@ -35,15 +35,40 @@ class Home extends Component {
         var max = parseInt(this.max.value)
 
         var arrSearch = this.state.searchProducts.filter(item => {
-            if(item.name.toLowerCase().includes(name)){
-                return true
+
+            //searchproducts itu ngambil data dari database awal
+            //hasil filternya ditembak ke state products, biar ga usah narik narik dari database terus
+
+            if(isNaN(min) && isNaN(max)){ //kalau kolom min dan max ga diisi SEARCH BY NAME
+                return(
+                    item.name.toLowerCase().includes(name.toLowerCase())
+                )
             }
-            else if(name === ''){
-                return true
+            else if(isNaN(min)){ //kalau min ga diisi
+                return(
+                    item.name.toLowerCase().includes(name.toLowerCase())
+                    && 
+                    item.price <= max
+                )
+            }
+            else if(isNaN(max)){ //kalau max ga diisi
+                return(
+                    item.name.toLowerCase().includes(name.toLowerCase())
+                    &&
+                    item.price >= min
+                )
+            }
+            else { //ngecek kalau semua kondisinya diisi
+                return (
+                    item.name.toLowerCase().includes(name.toLowerCase())
+                    &&
+                    item.price >= min
+                    && 
+                    item.price <= max
+                    )
             }
         })
-
-        this.setState({products : arrSearch})
+        this.setState({products : arrSearch}) //masukin hasil filter ke state
     }
 
     render () {

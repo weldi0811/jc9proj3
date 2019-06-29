@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {
     Button,
     Collapse,
@@ -7,7 +7,6 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
