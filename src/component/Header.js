@@ -42,11 +42,7 @@ class Header extends React.Component{
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link to = '/login'>
-                <Button color ='primary' className='mx-3'>Products</Button>
-                </Link>
-              </NavItem>
+            
               <NavItem>
                   <Link to = '/login'>
                 <Button color ='primary' className='mx-3'>Login</Button>
@@ -69,26 +65,33 @@ class Header extends React.Component{
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <NavbarBrand href="/">Ithink</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link to = '/manageproduct'>
-                <Button color ='primary' className='mx-3'>Products</Button>
+                <Link to = '/cart'>
+                <Button color ='primary' className='mx-3'>Cart</Button> 
                 </Link>
-              </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
                     hello, {this.props.user.username}
                   </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem>
-                      Profile
+                    <DropdownItem className='dropdown-item'>
+
+                    <Button color ='primary' className='mx-1 dropdown-item'>Profile</Button>
                     </DropdownItem>
                     <DropdownItem>
-                      Cart
+                    <Link to = '/manageproduct'>
+                    <Button color ='primary' className='mx-1 dropdown-item'>Products</Button>
+                    </Link>
                     </DropdownItem>
+                    <DropdownItem className='dropdown-item'>
+                    <Link to = '/cart'>
+                    <Button color ='primary' className='mx-1 dropdown-item'>Cart</Button> 
+                    </Link>
+                    </DropdownItem>
+                    
                     <DropdownItem divider />
                     <DropdownItem>
                       <button className= 'dropdown-item' onClick = {this.props.onLogoutUser}>Log Out</button>

@@ -25,6 +25,7 @@ class Home extends Component {
         return this.state.products.map(item => {
             return (
                 <ProductItem products={item}/> //kita ngelempar element yang di map ke komponen product item. dari product item tinggal di this.props
+                
             )
         })
     }
@@ -75,7 +76,7 @@ class Home extends Component {
         return (
             <div className="row">
                 <div className="col">
-                    <div className="mt-5">
+                    <div className="mt-3">
                         <div className="mx-auto card">
                             <div className="card-body">
                                 <div className="border-bottom border-secondary card-title">
@@ -102,5 +103,6 @@ class Home extends Component {
         )
     }
 }
+
 
 export default Home

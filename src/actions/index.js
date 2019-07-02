@@ -55,3 +55,27 @@ export const keepLogin = (objUser) => {
     }
 
 }
+
+export const addToCart = (id, quantityProduct) => {
+    return (dispatch) => {
+
+        axios.get('http://localhost:4000/products')
+        .then( res => {
+            console.log(res)
+
+            let addedItem = res.data.find( item => item.id === id ) // an Object that we want
+            addedItem.quantity = quantityProduct;
+
+            dispatch({
+                type: 'ADD_TO_CART',
+                payload: {
+                    id: id,
+                    singleItemToCart : addedItem,
+                    totalPrice : (addedItem.price * addedItem.quantity),
+                    lastSelectedID : id,
+                    quantityProduct : quantityProduct
+                }
+            })
+        })
+    }
+}
