@@ -34,9 +34,7 @@ export const onLoginUser = (inputEmail,inputpassword) =>{
     }).catch((err)=>{
         alert('server error')
     })
-
    }
-
 }
 export const onLogoutUser = () => {
     cookie.remove('userName')
@@ -53,27 +51,25 @@ export const keepLogin = (objUser) => {
             username: objUser.username
         }
     }
-
 }
 
 export const addToCart = (id, quantityProduct) => {
     return (dispatch) => {
-
-        axios.get('http://localhost:4000/products')
+        axios.get('http://localhost:4000/products', {
+            params : {
+                id : id
+            }
+        })
         .then( res => {
             console.log(res)
-
             let addedItem = res.data.find( item => item.id === id ) // an Object that we want
             addedItem.quantity = quantityProduct;
-
             dispatch({
                 type: 'ADD_TO_CART',
                 payload: {
                     id: id,
-                    singleItemToCart : addedItem,
+                    allCart : addedItem,
                     totalPrice : (addedItem.price * addedItem.quantity),
-                    lastSelectedID : id,
-                    quantityProduct : quantityProduct
                 }
             })
         })

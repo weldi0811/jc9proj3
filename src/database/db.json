@@ -29,7 +29,7 @@
     {
       "name": "asdfsadf2",
       "desc": "asdfasdfsa2",
-      "price": "100000",
+      "price": 100000,
       "src": "https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/092015/corsair_new_2.png?itok=Ovp7Wi8i",
       "id": 2
     },
@@ -39,6 +39,18 @@
       "price": 10000000,
       "src": "https://res.cloudinary.com/teepublic/image/private/s--3RFUOaz6--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1510662005/production/designs/2055435_1.jpg",
       "id": 3
+    }
+  ],
+  "cart": [
+    {
+      "userId": 4,
+      "productId": 2,
+      "productName": "asdfsadf2",
+      "productDesc": "asdfasdfsa2",
+      "productPrice": 100000,
+      "productSrc": "https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/092015/corsair_new_2.png?itok=Ovp7Wi8i",
+      "quantity": 3,
+      "id": 1
     }
   ]
 }

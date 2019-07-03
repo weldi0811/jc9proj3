@@ -32,6 +32,7 @@ const AuthReducer = (data = init , action) => {
 
             if(moreThanOne) {
                 
+                var userIdCart = action.payload.id
                 var addedItemQuantity = action.payload.singleItemToCart.quantity
                 for(var i = 0; i<data.myCart.length; i++){
                     if(data.myCart[i].id === action.payload.lastSelectedID){
@@ -41,6 +42,7 @@ const AuthReducer = (data = init , action) => {
 
                return {
                    ...data,
+                   userIdCart,
                    totalUnit : data.totalUnit + addedItemQuantity,
                    totalPrice: data.totalPrice + parseInt(moreThanOne.price),
                }
@@ -48,6 +50,7 @@ const AuthReducer = (data = init , action) => {
 
                 return{
                     ...data,
+                    userIdCart,
                     myCart: [...data.myCart, action.payload.singleItemToCart],
                     totalPrice: data.totalPrice + action.payload.totalPrice,
                     totalUnit : data.totalUnit + action.payload.singleItemToCart.quantity
