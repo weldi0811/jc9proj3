@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import ProductItem from './ProductItem'
+import DetailProduct from './DetailProduct';
 
 class Home extends Component {
 
@@ -22,10 +23,10 @@ class Home extends Component {
     }
 
     renderList = () => {
+    
         return this.state.products.map(item => {
             return (
                 <ProductItem products={item}/> //kita ngelempar element yang di map ke komponen product item. dari product item tinggal di this.props
-                
             )
         })
     }
@@ -73,6 +74,7 @@ class Home extends Component {
     }
 
     render () {
+        console.log(this.state.products)
         return (
             <div className="row">
                 <div className="col">

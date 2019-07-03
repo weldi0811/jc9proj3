@@ -21,20 +21,9 @@ class DetailProduct extends Component{
         })
     }
 
-    handleClick = (id) => {
-        const inputQuantity = parseInt(this.quantity.value);
-        console.log(inputQuantity)
-
-        if ( isNaN(inputQuantity) ) {
-            alert('Hey please input the quantity');
-        } else {
-            this.props.addToCart(id, inputQuantity);
-        }
-        
-    }
-
 
     render(){
+       
         return (
 
             <div className="card col-3 m-5">
@@ -44,7 +33,8 @@ class DetailProduct extends Component{
                     <p className='card-text'>Deskripsi : {this.state.barang.desc}</p>
                     <p className='card-text'>Harga : IDR{this.state.barang.price}</p>
                     <input type='text' className='form-control'/>
-                    <button className='btn btn-primary btn-block'>Add To Cart</button>
+                    <button className='btn btn-primary'>Add To Cart</button>
+
                 </div>
             </div>
             

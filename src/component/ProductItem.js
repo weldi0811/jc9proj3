@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {addToCart} from '../actions/index'
 import {connect} from 'react-redux'
 import axios from 'axios'
+import DetailProduct from './DetailProduct';
 
 class ProductItem extends Component{
     state = {
@@ -85,23 +86,23 @@ class ProductItem extends Component{
     }
 
     render(){
-        const {name,src,price,id,desc} = this.props.products
-        
+       
         return(
             <div  className = 'card col-3 mt-5 mx-3'>
-                    <img src={src} className='card-img-top' alt='Product'/>
+                    <img src={this.props.products.src} className='card-img-top' alt='Product'/>
                     <div className='card-body align-bottom'>
-                        <h5 className='card-title'>{name}</h5>
-                        <p className='card-text'>Rp{price},-</p>
+                        <h5 className='card-title'>{this.props.products.name}</h5>
+                        <p className='card-text'>Rp{this.props.products.price},-</p>
                         <form>
                             <input className='form-control' placeholder='Qty' onChange={this.handleChange}/>    
                         </form>
                         {/* ini cara untuk menambahkan :id pada <Link> */}
-                        <Link to={'/detailproduct/' + id}>
+                        <Link to={'/detailproduct/' + this.props.products.id}>
                             <button className='btn btn-outline-primary btn-block my-2'>Details</button>
                         </Link>
-                        <button className='btn btn-primary' onClick={()=>this.handleAddToCart(name,id,price,src,desc)}>Add To Cart</button>
+                        <button className='btn btn-primary' onClick={()=>this.handleAddToCart(this.props.products.name,this.props.products.id,this.props.products.price,this.props.products.src,this.props.products.desc)}>Add To Cart</button>
                     </div>
+                    
             </div>
         )
     }

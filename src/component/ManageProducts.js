@@ -53,7 +53,10 @@ class ManageProducts extends Component {
                 this.setState({products : res.data})
             })
         })
-
+        this.name.value = ''
+        this.desc.value =''
+        this.price.value =''
+        this.pict.value = ''
     }
 
     componentDidMount(){
@@ -187,7 +190,7 @@ class ManageProducts extends Component {
                             <th scope="col"><input ref={input => this.desc = input} className="form-control" type="text" /></th>
                             <th scope="col"><input ref={input => this.price = input} className="form-control" type="text" /></th>
                             <th scope="col"><input ref={input => this.pict = input} className="form-control" type="text" /></th>
-                            <th scope="col"><button className="btn btn-outline-warning" onClick={() => this.addProduct} >Add</button></th>
+                            <th scope="col"><button className="btn btn-outline-warning" onClick={() => this.addProduct()} >Add</button></th>
                         </tr>
                     </tbody>
                 </table>
